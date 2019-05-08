@@ -3,7 +3,7 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import *
 import sys
 
-
+"""
 class MainUI(QMainWindow):
     def __init__(self):
         super(MainUI, self).__init__()
@@ -22,7 +22,7 @@ class MainUI(QMainWindow):
         self.apply_audio_settings = QPushButton('Apply Settings', self)
         self.master_layout.addWidget(self.apply_audio_settings, 1, 0)
         self.setCentralWidget(self.master_layout)
-        self.show()
+        self.show()"""
 
 
 class AudioSettings(QWidget):
