@@ -5,7 +5,7 @@ This Graphical User Interface ensures the generation and the acquisition of muti
 
 <img src="pictures/ScreenCapture.png">
 
-**Work in progress :** *please check out the wiki / documentation for more information about this project. We would greatly appreciate feedback and help !*
+**Work in progress :** *please check out the wiki / documentation for more information about this project. We would greatly appreciate any feedback or help !*
 
 # Installation
 Adm runs with Python 3.7 and depends on [PyQt5](https://pypi.org/project/PyQt5/), [pyqtgraph](http://www.pyqtgraph.org/), [numpy](https://www.numpy.org/), [pyaudio](https://pypi.org/project/PyAudio/), [serial](https://pypi.org/project/serial/) and [wave](https://docs.python.org/3/library/wave.html#module-wave).
