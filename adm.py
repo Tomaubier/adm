@@ -73,7 +73,7 @@ class MainUI(QMainWindow):
     def closeEvent(self, event):
         closeMessage = QMessageBox()
         closeMessage.setText('Quit Application?')
-        closeMessage.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
+        closeMessage.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel) '#'
         closeMessage = closeMessage.exec()
         if closeMessage == QMessageBox.Yes:
             self.audioAcquisition.clean()
@@ -86,7 +86,8 @@ class MainUI(QMainWindow):
 
     def turnTableInit(self):
         try:
-            self.arduSer = serial.Serial('/dev/tty.wchusbserial141230', 9600, timeout=2) # Specify the correct path to the arduino serial port
+            self.arduSer = serial.Serial('/dev/tty.wchusbserial1410', 9600, timeout=2) # Specify the correct path to the arduino serial port
+            # On macOS, use ls /dev/tty.* to get the list of available ports
             self.turnTableConnected = True
             self.arduSer.close()
             QMessageBox.information(self, 'Info', 'Turn Table Connected!', QMessageBox.Ok, QMessageBox.Ok)
