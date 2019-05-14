@@ -73,7 +73,7 @@ class MainUI(QMainWindow):
     def closeEvent(self, event):
         closeMessage = QMessageBox()
         closeMessage.setText('Quit Application?')
-        closeMessage.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel) '#'
+        closeMessage.setStandardButtons(QMessageBox.Yes | QMessageBox.Cancel)
         closeMessage = closeMessage.exec()
         if closeMessage == QMessageBox.Yes:
             self.audioAcquisition.clean()
@@ -175,7 +175,7 @@ class MainUI(QMainWindow):
             QMessageBox.question(self, 'Error', 'Invalid Path', QMessageBox.Ok, QMessageBox.Ok)
 
     def fileManagement(self):
-        self.measurementDirPath = os.path.join(self.parentDirectoryPath, self.file.set_directory.text())
+        self.measurementDirPath = os.path.join(self.parentDirectoryPath, self.measure.set_name.text())
         if not os.path.exists(self.measurementDirPath):
             os.mkdir(self.measurementDirPath)
 
