@@ -15,7 +15,7 @@ import os
 class MainUI(QMainWindow):
     STREAM_DTYPE = pyaudio.paInt16
     DTYPE = np.int16
-    CHUNK_SIZE = 4096
+    CHUNK_SIZE = 2048
     FS = 44100
 
     def __init__(self):
@@ -86,7 +86,7 @@ class MainUI(QMainWindow):
 
     def turnTableInit(self):
         try:
-            self.arduSer = serial.Serial('/dev/tty.wchusbserial1410', 9600, timeout=2) # Specify the correct path to the arduino serial port
+            self.arduSer = serial.Serial('/dev/tty.wchusbserial143230', 9600, timeout=2) # Specify the correct path to the arduino serial port
             # On macOS, use ls /dev/tty.* to get the list of available ports
             self.turnTableConnected = True
             self.arduSer.close()
@@ -240,12 +240,13 @@ class MainUI(QMainWindow):
             self.recording.measure_info.setText('No signal recieved from the turn table...')
         QApplication.processEvents()
         time.sleep(4)
-        if int(self.arduSer.readline()) == 2:
-            self.recording.measure_info.setText('Rotation Done!')
-        else:
-            self.recording.measure_info.setText('No signal recieved from the turn table...')
-        QApplication.processEvents()
         self.arduSer.close()
+        # if int(self.arduSer.readline()) == 2:
+        #     self.recording.measure_info.setText('Rotation Done!')
+        # else:
+        #     self.recording.measure_info.setText('No signal recieved from the turn table...')
+        # QApplication.processEvents()
+        # self.arduSer.close()
 
     def set_layout_excitation_signal(self):
         if self.audio_settings.get_excitation_signal.currentIndex() == 0:
@@ -277,6 +278,7 @@ class MainUI(QMainWindow):
         self.measure.set_angle_step.setEnabled(True)
         self.recording.apply_recording.setEnabled(True)
         self.measure.settings.setEnabled(True)
+
 
 class PlotWindow(): # QtCore.QThread
     def __init__(self):

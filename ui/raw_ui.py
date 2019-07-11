@@ -98,7 +98,7 @@ class FileSettings(QWidget):
         self.file_layout.addWidget(self.settings, 0, 0)
 
         self.set_directory = QLineEdit(self)
-        self.set_directory.setText('/Users/Tom/Desktop/') # '/Path/to/directory/'
+        self.set_directory.setText('/Users/Tom/Documents/MaxMeasurement') # '/Path/to/directory/'
         self.file_layout.addWidget(self.set_directory, 1, 0)
 
         self.apply_directory = QPushButton('Set Path', self)

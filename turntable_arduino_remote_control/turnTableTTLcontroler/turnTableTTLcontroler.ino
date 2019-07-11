@@ -2,7 +2,7 @@
 // This program is free software: you can redistribute it and/or modify it
 
 int TTLinPin = 4; // Jack Right
-int TTLoutPin = 2; // Jack Left
+int TTLoutPin = 13; // 2; // Jack Left
 
 void setup() {
   // Setup the input and output pins
